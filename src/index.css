@@ -1,13 +1,153 @@
+:root {
+  --blanco: #ffffff;
+  --gris1: #edf2f6;
+  --gris2: #2f3848;
+  --gris3: #1a202d;
+  --negro: #000000;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--gris1);
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--gris3);
+  width: 100%;
+}
+
+h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  color: var(--gris3);
+  text-transform: uppercase;
+}
+h1 a {
+  font-size: 3rem;
+}
+
+a {
+  color: var(--blanco);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: #52d5f2;
+}
+
+.navegacion {
+  display: flex;
+  align-items: center;
+}
+
+.contenedor {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .contenedor {
+    max-width: 90%;
+  }
+}
+
+.contenedor_producto {
+  background-color: var(--blanco);
+  padding: 5px 25px 5px 5px;
+  margin-bottom: 25px;
+  display: grid;
+  grid-template-columns: 25% 75%;
+  height: 200px;
+  -webkit-box-shadow: 4px 10px 21px -1px rgba(26, 32, 45, 1);
+  -moz-box-shadow: 4px 10px 21px -1px rgba(26, 32, 45, 1);
+  box-shadow: 4px 10px 21px -1px rgba(26, 32, 45, 1);
+}
+
+.carro {
+  display: grid;
+  grid-template-columns: 65% 35%;
+}
+
+.detalles {
+  display: flex;
+  justify-content: space-around;
+}
+.detalles h2 {
+  font-size: 2rem;
+}
+.logo {
+  width: 130px;
+  max-height: 200px;
+}
+
+.info_producto h3 {
+  text-transform: uppercase;
+  color: var(--negro);
+  text-align: center;
+  font-size: 1.5rem;
+  margin-top: 15px;
+  max-height: 25px;
+  overflow: hidden;
+}
+
+.info_producto p {
+  margin: 0;
+  text-align: right;
+  font-size: 1.2rem;
+}
+.info_producto p:first-of-type {
+  color: var(--gris2);
+  max-height: 50px;
+  overflow: hidden;
+}
+
+.info_producto p {
+  margin-top: 5px;
+  color: var(--negro);
+}
+.info_producto p span {
+  color: red;
+}
+.info_producto form {
+  text-align: right;
+  margin-top: 10px;
+}
+
+label {
+  color: var(--gris2);
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+  display: block;
+}
+
+option {
+  text-transform: uppercase;
+}
+select {
+  margin: 1rem 0 3rem 0;
+  width: 100%;
+  padding: 0.7rem;
+  border-radius: 10px;
+  border: none;
+  display: block;
+  -webkit-appearance: none;
+  font-size: 1.3rem;
 }
