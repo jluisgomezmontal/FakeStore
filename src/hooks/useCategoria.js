@@ -12,10 +12,10 @@ export const useCategoria = (label, initialState, opciones ) => {
             <select            onChange={ e=> setState(e.target.value) }
             value={ state}
             >
-                <option value='' >----{label}</option>
+                <option value='' >----{label}----</option>
             {
                 opciones.map(opcion => (
-                    <option key={opcion} value={opcion} >{opcion}</option>
+                    <option key={opcion} value={opcion} >{opcion.toUpperCase()}</option>
                 )) 
             }
     

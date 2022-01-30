@@ -1,5 +1,5 @@
-import React, { useEffect, useReducer, useState } from 'react';
-import { ADD, GET } from '../types';
+import React, { useReducer } from 'react';
+import { ADD } from '../types';
 import { productoContext } from './productoContext';
 import { productosReducer } from './productoReducer';
 
@@ -26,7 +26,6 @@ export const ProductosState = props => {
     return(
         <productoContext.Provider
             value={{
-                productos: state.productos,
                 carrito: state.carrito,
                 total: state.total,
                 cargando: state.cargando,

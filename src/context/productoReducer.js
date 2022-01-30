@@ -7,7 +7,8 @@ export const productosReducer = (state, action) => {
             const {total, cantidad} = carrito.reduce((acc,articulo)=>({
             total: acc.total + articulo.subtotal,
             cantidad: acc.cantidad + articulo.cantidad
-            }), {total:0, cantidad: 0})
+            }), 
+            {total:0, cantidad: 0})
             return {
             ...state, carrito, total, cantidad
             };

@@ -1,5 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { productoContext } from '../context/productoContext';
+import React, {  useEffect, useState } from 'react';
 import { ComponenteProducto } from './ComponenteProducto';
 import { Spinner } from './Spinner';
 
@@ -7,11 +6,6 @@ export const Productos = () => {
 
   const [getProducts, setGetProducts] = useState([]);
   const [cargando, setCargando] = useState(true);
-
-
-  //Obteniendo el State
-  const productosReducer = useContext(productoContext);
-  const {  } = productosReducer;
 
   useEffect(() => {
     const consultarApi = async () => {

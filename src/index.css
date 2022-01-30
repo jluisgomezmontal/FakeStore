@@ -34,6 +34,19 @@ h1 {
   color: var(--gris3);
   text-transform: uppercase;
 }
+h2 {
+  font-size: 2rem;
+  text-align: left;
+  color: var(--gris3);
+  text-transform: uppercase;
+}
+h3 {
+  font-size: 1.7rem;
+  text-align: left;
+  color: var(--gris3);
+  text-transform: uppercase;
+  margin-top: 5rem;
+}
 h1 a {
   font-size: 3rem;
 }
@@ -45,6 +58,17 @@ a {
   text-decoration: none;
   font-size: 1.2rem;
   transition: 0.3s;
+}
+@media (max-width: 768px) {
+  h1 a {
+    font-size: 2rem;
+  }
+  a {
+    font-size: 1rem;
+  }
+  h1 {
+    font-size: 1.75rem;
+  }
 }
 
 a:hover {
@@ -61,12 +85,6 @@ a:hover {
   margin: 0 auto;
 }
 
-@media (max-width: 768px) {
-  .contenedor {
-    max-width: 90%;
-  }
-}
-
 .contenedor_producto {
   background-color: var(--blanco);
   padding: 5px 25px 5px 5px;
@@ -79,6 +97,14 @@ a:hover {
   box-shadow: 4px 10px 21px -1px rgba(26, 32, 45, 1);
 }
 
+@media (max-width: 768px) {
+  .contenedor {
+    max-width: 90%;
+  }
+  .contenedor_producto {
+    padding: 5px 10px 5px 5px;
+  }
+}
 .carro {
   display: grid;
   grid-template-columns: 65% 35%;
@@ -91,9 +117,20 @@ a:hover {
 .detalles h2 {
   font-size: 2rem;
 }
+
 .logo {
   width: 130px;
   max-height: 200px;
+}
+@media (max-width: 768px) {
+  .detalles h2 {
+    font-size: 1rem;
+  }
+  .logo {
+    width: 55px;
+    max-height: 180px;
+    margin-top: 45px;
+  }
 }
 
 .info_producto h3 {
@@ -116,7 +153,11 @@ a:hover {
   max-height: 50px;
   overflow: hidden;
 }
-
+@media (max-width: 768px) {
+  .info_producto p:first-of-type {
+    max-height: 55px;
+  }
+}
 .info_producto p {
   margin-top: 5px;
   color: var(--negro);
@@ -127,6 +168,23 @@ a:hover {
 .info_producto form {
   text-align: right;
   margin-top: 10px;
+}
+
+input[type="number"] {
+  width: 50px;
+}
+
+input[type="button"]:first-of-type {
+  background-color: #f23558;
+}
+input[type="button"] {
+  background-color: #9ce839;
+}
+input[type="submit"] {
+  background-color: #fffa52;
+  margin-left: 15px;
+  padding: 5px;
+  border-radius: 5px;
 }
 
 label {
@@ -150,4 +208,42 @@ select {
   display: block;
   -webkit-appearance: none;
   font-size: 1.3rem;
+}
+
+.d_flex {
+  display: grid;
+  grid-template-columns: 75% 25%;
+  grid-column-gap: 35px;
+}
+@media (max-width: 768px) {
+  .info_producto h3 {
+    text-align: right;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+  }
+  .info_producto p {
+    font-size: 1rem;
+  }
+  select {
+    font-size: 1rem;
+  }
+  .d_flex div h2 {
+    font-size: 1.2rem;
+  }
+  .d_flex {
+    grid-template-columns: 70% 30%;
+    grid-column-gap: 15px;
+  }
+}
+
+.subtotal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 220px;
+  margin-bottom: 25px;
+}
+
+h2 span {
+  color: #f23558;
 }
