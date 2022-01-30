@@ -1,12 +1,13 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import Popup from 'reactjs-popup';
 import { productoContext } from '../context/productoContext';
 import { useCounter } from '../hooks/useCounter';
 
 const initialState = 0;
 
 export const ComponenteProducto = props => {
+  const [alerta, setAlerta] = useState(false);
+  const [agregado, setAgregado] = useState(false);
 
   const { pathname:location } = useLocation();
 
@@ -24,7 +25,19 @@ export const ComponenteProducto = props => {
     const objCarrito = {
       id, title, price , image, piezas: counter, subtotal: price * counter,description, category
     };
+    //validar counter
+    if(counter < 1){
+      setAlerta(true)
+      setTimeout(() => {
+        setAlerta(false)
+      }, 800);
+      return
+    }
     //actualizarProducto(objCarrito);
+    setAgregado(true);
+    setTimeout(() => {
+      setAgregado(false);      
+    }, 800);
     agregarCarrito(objCarrito);
     reset();    
   }  
@@ -37,6 +50,16 @@ export const ComponenteProducto = props => {
             <h3>{id}.-{title}</h3>
             <p>{description}</p>
             <p>Categoria: {' ' + category}{' '}<span>{' $'+price.toFixed(2)}</span></p>
+            {
+              alerta ?
+              <p id='alerta' >Minimo Agregue 1 acticulo</p>
+              :null            
+            }
+            {
+              agregado ?
+              <p id='agregado' >Producto Agregado</p>
+              :null
+            }
             <form action="submit" onSubmit={handleSubmit}
             >
               {
@@ -52,9 +75,7 @@ export const ComponenteProducto = props => {
                   }
                     <input min="0" type="number" value={counter} />
                     <input onClick={increment} type='button' value='+' />
-                    <Popup trigger={<input type='submit' value='AGREGAR' />} position="right center">
-                    <button>Agregado</button>
-                    </Popup>
+                    <input type='submit' value='AGREGAR' />
                     
                   </div>
                     

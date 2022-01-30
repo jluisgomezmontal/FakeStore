@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { productoContext } from '../context/productoContext';
 import { ComponenteProducto } from './ComponenteProducto';
 
@@ -26,7 +26,7 @@ export const Carro = () => {
         <div>
           <h1>Carro</h1>
         <div className="d_flex">
-          <div className=''>
+          <div >
             <h2>Detalles</h2>
             {
               carrito.map( ({id, title, price, description, category, image, piezas}) => (
@@ -42,6 +42,7 @@ export const Carro = () => {
                 />
                 ))
               }
+            <Link to='/'>Continuar con la compra</Link>
           </div>
           <div>
             <h2>Subtotal</h2>

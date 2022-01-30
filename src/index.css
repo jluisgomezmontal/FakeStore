@@ -215,6 +215,20 @@ select {
   grid-template-columns: 75% 25%;
   grid-column-gap: 35px;
 }
+
+.d_flex a {
+  display: block;
+  background-color: var(--gris3);
+  padding: 10px 45px;
+  color: var(--blanco);
+  transition: 0.3s;
+  text-transform: uppercase;
+}
+.d_flex a:hover {
+  color: var(--blanco);
+  padding: 10px 45px;
+  background-color: var(--gris2);
+}
 @media (max-width: 768px) {
   .info_producto h3 {
     text-align: right;
@@ -235,12 +249,21 @@ select {
     grid-column-gap: 15px;
   }
 }
+#alerta {
+  color: #f23558;
+  margin: 0;
+  font-size: 15px;
+}
+#agregado {
+  color: green;
+  margin: 0;
+  font-size: 15px;
+}
 
 .subtotal {
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 220px;
+  height: 210px;
   margin-bottom: 25px;
 }
 
