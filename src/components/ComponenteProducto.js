@@ -51,13 +51,19 @@ export const ComponenteProducto = props => {
             <p>{description}</p>
             <p>Categoria: {' ' + category}{' '}<span>{' $'+price.toFixed(2)}</span></p>
             {
-              alerta ?
-              <p id='alerta' >Minimo Agregue 1 acticulo</p>
-              :null            
+              alerta || agregado ?null:
+              <p id='vacio' >Agregue minimo 1 articulo</p>
             }
             {
+              alerta ?
+              <p id='alerta' >Agregue minimo 1 articulo</p>
+              :null
+
+            }
+
+            {
               agregado ?
-              <p id='agregado' >Producto Agregado</p>
+              <p id='agregado' >Producto agregado</p>
               :null
             }
             <form action="submit" onSubmit={handleSubmit}

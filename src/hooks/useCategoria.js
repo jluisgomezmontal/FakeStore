@@ -9,7 +9,8 @@ export const useCategoria = (label, initialState, opciones ) => {
     
     const SelectCripto = ()=>(
         <>
-            <select            onChange={ e=> setState(e.target.value) }
+            <select 
+            onChange={ e=> setState(e.target.value) }
             value={ state}
             >
                 <option value='' >----{label}----</option>

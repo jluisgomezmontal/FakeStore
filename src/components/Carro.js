@@ -42,7 +42,7 @@ export const Carro = () => {
                 />
                 ))
               }
-            <Link to='/'>Continuar con la compra</Link>
+            <Link to='/compra'>Continuar con la compra</Link>
           </div>
           <div>
             <h2>Subtotal</h2>
